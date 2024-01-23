@@ -5,8 +5,11 @@ export default {
         Vue.mixin({
             methods: {
                 dateToDB(date) {
+                    console.log(date);
                     const [day, month, year] = date.split('/');
+                    console.log(date);
                     return `${year}-${month}-${day}`;
+
                 },
                 dbDateToFr(dbDate) {
                     const [year, month, day] = dbDate.split('-');

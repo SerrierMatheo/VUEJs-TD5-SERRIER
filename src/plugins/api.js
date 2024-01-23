@@ -1,7 +1,7 @@
 import axios from 'axios';
 
 export default {
-    install: (App, options) => {
+    install: (app, options) => {
 
         const api = axios.create({
             baseURL: options.baseURL,
@@ -11,6 +11,6 @@ export default {
             }
         });
 
-        App.config.globalProperties.$api = api;
+        app.config.globalProperties.$api = api;
     },
 };
