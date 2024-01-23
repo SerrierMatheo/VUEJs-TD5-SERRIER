@@ -1,11 +1,16 @@
-import axios from "axios";
-const apiKey = 'e>I70.*Sv,aZ'; //
+import axios from 'axios';
 
-const axiosInstance = axios.create({
-    baseURL: 'https://donations.edu.netlor.fr/',
-    headers: {
-        'Content-Type': 'application/json',
-        'Authorization': "key=${apiKey}"
-    }
-});
-export default axiosInstance;
+export default {
+    install: (App, options) => {
+
+        const api = axios.create({
+            baseURL: options.baseURL,
+            headers: {
+                "Content-type": "application/json",
+                'Authorization': `key=${options.apiKey}`
+            }
+        });
+
+        App.config.globalProperties.$api = api;
+    },
+};
